@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  app-angular:
+    build: .
+    container_name: app-angular
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./:/home/node/app
+    networks:
+      - network-example-angular
+
+networks:
+  network-example-angular:
+    driver: bridge
